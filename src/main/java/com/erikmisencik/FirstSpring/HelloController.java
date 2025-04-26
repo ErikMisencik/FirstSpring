@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String sayHello() {
-        return "Hello, World!";
+    public HelloResponse sayHello() {
+        return new HelloResponse("Hello, World!");
     }
 
     @PostMapping("/hello")
-    public String sayHelloPost(@RequestBody String name) {
-        return "Hello, " + name + " !";
+    public HelloResponse sayHelloPost(@RequestBody String name) {
+        return new HelloResponse( "Hello, " + name + "!");
     }
 
 }
